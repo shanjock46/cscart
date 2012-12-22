@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<addon>
+	<id>1clue_product_analogues</id>
+	<name>Product analogues</name>
+	<description>Allows you to sepcify cross-linked or bi-directional links among the products</description>
+	<priority>112</priority>
+	<position>0</position>
+	<status>active</status>
+	<dependencies></dependencies>
+	<opt_settings>
+	<section name="general">
+	<item id="display_template">
+		<name>Select template for products</name> 
+		<translations>
+			<item for="display_template" lang="RU">Выберите темплейт для отображения продуктов</item> 
+		</translations>
+		<type>selectbox</type> 
+		<default_value>products_multicolumns</default_value> 
+		<variants>
+			<item id="products_multicolumns">
+				<name>Grid</name> 
+				<translations /> 
+			</item>
+			<item id="products_without_options">
+				<name>List without options</name> 
+				<translations /> 
+			</item>
+			<item id="short_list">
+				<name>Compact list</name>
+				<translations /> 
+			</item>
+		</variants>
+	</item>
+	<item id="link_type">
+		<name>Select the product links type</name> 
+		<translations>
+			<item for="display_template" lang="RU">Выберите тип связей продуктов</item> 
+		</translations>
+		<type>selectbox</type> 
+		<default_value>cross_linked</default_value> 
+		<variants>
+			<item id="cross_linked">
+				<name>Cross-linked</name>
+				<translations /> 
+			</item>
+			<item id="bi_directional">
+				<name>Bi-directional</name> 
+				<translations /> 
+			</item>
+		</variants>
+	</item>
+	</section>
+	</opt_settings>
+	<opt_queries>
+		<item>CREATE TABLE ?:addon_product_analogues (
+                          `master_id` int(11) NOT NULL,                                   
+                          `slave_id` int(11) NOT NULL,                                    
+                          PRIMARY KEY  (`master_id`,`slave_id`)                           
+                        ) ENGINE=MyISAM DEFAULT CHARSET=utf8</item> 
+		<item for="uninstall">DROP TABLE IF EXISTS ?:addon_product_analogues</item> 
+	</opt_queries>
+	<translations>
+		<item for="name" lang="RU">Аналоги продукта</item>
+		<item for="description" lang="RU">Позволяет задавать связи продуктов, для отображения дополнительных товаров на детальной странице продукта</item>
+	</translations>
+	<opt_language_variables>
+		<item id="product_analogues" lang="RU">Аналоги продукта</item> 
+		<item id="product_analogues" lang="EN">Product analogues</item> 
+	</opt_language_variables>
+</addon>

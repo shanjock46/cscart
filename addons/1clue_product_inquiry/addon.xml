@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<addon>
+	<id>1clue_product_inquiry</id>
+	<name>Product inquiry</name>
+	<priority>250</priority>
+	<position>250</position>
+	<status>active</status>
+	<dependencies></dependencies>
+	<opt_settings>
+		<section name="general">
+			<item id="email_address">
+				<name>Questions will be sent to the following email address</name>
+				<type>input</type>
+				<default_value></default_value>
+				<translations>
+					<item lang="RU">Email адрес для вопросов</item>
+				</translations>
+			</item>
+			<item id="use_image_verification">
+				<name>Use image verification</name>
+				<type>checkbox</type>
+				<default_value>Y</default_value>
+				<translations>
+					<item lang="RU">Использовать капчу</item>
+				</translations>
+			</item>
+		</section>
+	</opt_settings>
+	<translations>
+	  <item for="name" lang="RU">Задать вопрос о продукте</item> 
+	</translations>
+	<opt_language_variables>
+	  <item lang="EN" id="product_inquiry">Product inquiry</item> 
+	  <item lang="RU" id="product_inquiry">Задать вопрос</item> 
+	  <item lang="EN" id="question">Question</item> 
+  	  <item lang="RU" id="question">Вопрос</item> 
+	</opt_language_variables>
+</addon>
