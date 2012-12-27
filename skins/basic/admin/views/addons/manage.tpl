@@ -68,7 +68,13 @@
 
 {/foreach}
 <!--addons_list--></div>
+{capture name="tools"}
+	{capture name="add_new_module"}
+		{include file="views/addons/add.tpl"}
+	{/capture}
+	{include file="common_templates/popupbox.tpl" id="add_new_module" text=$lang.add_module content=$smarty.capture.add_new_module link_text=$lang.add_module act="general"}
+{/capture}
 
 {/capture}
-{include file="common_templates/mainbox.tpl" title=$lang.addons content=$smarty.capture.mainbox}
+{include file="common_templates/mainbox.tpl" title=$lang.addons content=$smarty.capture.mainbox tools=$smarty.capture.tools}
 
